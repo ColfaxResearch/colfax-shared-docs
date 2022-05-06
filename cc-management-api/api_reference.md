@@ -74,8 +74,12 @@ class JWTAuth(requests.auth.AuthBase):
               'exp': time.time()+10,    # Optional: expiration time.
               'nonce': r_nonce.text}    # Optional: nonce.
     encoded_jwt = jwt.encode(payload, self.secret, algorithm='HS256') # only HS256 supported
+    
     # Setting HTTP header for JWT Authorization
-    r.headers['Authorization'] = "Bearer "+encoded_jwt
+    r.headers['Authorization'] = "Bearer "+encoded_jwt.decode('utf-8')
+    # In some versions of pyjwt the above may cause an TypeError. If so, try:
+    #  r.headers['Authorization'] = "Bearer "+encoded_jwt
+    
     return r
 
 # provided issuer name
