@@ -176,6 +176,8 @@ Note: `pagination` is only present if `limit` is set
     * `username` - Username for the user. If not provided, it will be assigned the default "u<UserRID>" value.
   
     * `duration` - Duration of the account. If not provided, the account will not expire.
+  
+    * `end_date` - The exact end_date. If this and duration are both set, this takes prescedence. If set to none, account will not expire. 
 
   * **additional parameters**
     
@@ -410,6 +412,24 @@ The exact path depends on the project. Contact admin to get the correct base API
 ```
 </details>
 
+<details>
+ <summary><code>POST /groups/:groupname</code> - Get all users of a group</summary>
+
+* *****URL Params*****
+
+  * `groupname` - Name of the group to add the user to.
+
+* *****Success Response:*****
+```
+200 OK
+{ 
+  "status" : "success", 
+  "data" : null
+}
+```
+</details>
+
+  
 <details>
  <summary><code>POST /groups/:groupname/user</code> - Add an user to a group</summary>
 
