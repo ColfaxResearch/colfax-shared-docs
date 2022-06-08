@@ -413,7 +413,7 @@ The exact path depends on the project. Contact admin to get the correct base API
 </details>
 
 <details>
- <summary><code>POST /groups/:groupname</code> - Get all users of a group</summary>
+ <summary><code>GET /groups/:groupname</code> - Get all users of a group</summary>
 
 * *****URL Params*****
 
