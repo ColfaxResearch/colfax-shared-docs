@@ -413,12 +413,14 @@ The exact path depends on the project. Contact admin to get the correct base API
 </details>
 
 <details>
- <summary><code>GET /groups/:groupname</code> - Get all users of a group</summary>
+ <summary><code>POST /groups</code> - Create a new group</summary>
 
-* *****URL Params*****
+* *****Form Params*****
 
-  * `groupname` - Name of the group to add the user to.
-
+  * `groupname` - Group name of the new group.
+  
+  * `gidNumber` - Group ID of the new group.
+  
 * *****Success Response:*****
 ```
 200 OK
@@ -426,6 +428,28 @@ The exact path depends on the project. Contact admin to get the correct base API
   "status" : "success", 
   "data" : null
 }
+```
+</details>
+  
+<details>
+ <summary><code>GET /groups/:groupname</code> - Get all users of a group</summary>
+
+* *****URL Params*****
+
+  * `groupname` - Name of the group to get the users of.
+
+* *****Success Response:*****
+```
+200 OK
+{"data":
+  {"all_groups": 
+    [ 
+      {"Guid":1234,"Name":"mygroup1"},
+      {"Guid":1235,"Name":"mygroup2"}
+    ]
+  },
+"status":"success"}
+
 ```
 </details>
 
