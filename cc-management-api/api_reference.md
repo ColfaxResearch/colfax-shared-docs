@@ -476,16 +476,12 @@ The exact path depends on the project. Contact admin to get the correct base API
 </details>
 
 <details>
- <summary><code>DELETE /groups/:groupname/user/:username</code> - Add an user to a group</summary>
+ <summary><code>DELETE /groups/:groupname/user/:username</code> - Remove an user from a group</summary>
 
 * *****URL Params*****
 
   * `groupname` - Name of the group to add the user to.
   * `username` - Name of the group to add the user to.
-
-* *****Required Form Params*****
-
-  *  `username` - Username for the user. 
 
 * *****Success Response:*****
 ```
