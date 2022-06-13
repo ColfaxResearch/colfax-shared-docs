@@ -104,14 +104,14 @@ The exact path depends on the project. Contact admin to get the correct base API
 #### Endpoints
 
 <details>
- <summary><code>GET /user/</code> - Get all users, or an user with a specific name or EID</summary>
+ <summary><code>GET /user/</code> - Get all users, or an user with a specific name or EID. Expired users are not returned by default.</summary>
 
 * *****Optional query args*****
   * `username` - Username of the user to get. Note: if `eid` is set, this is ignored.
   
   * `eid` - EID of the user to get. Note: multiple linux accounts will be returned if the user has multiple.
 
-  * `include_expired` - Whether to return expired accounts. By default set to none.
+  * `include_expired` - Whether to return expired accounts. By default set to False.
     
   * `limit` - Integer limit of the number of entries returned.
   
