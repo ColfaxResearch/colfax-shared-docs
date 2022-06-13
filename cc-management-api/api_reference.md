@@ -104,7 +104,9 @@ The exact path depends on the project. Contact admin to get the correct base API
 #### Endpoints
 
 <details>
- <summary><code>GET /user/</code> - Get all users, or an user with a specific name or EID. Expired users are not returned by default.</summary>
+ <summary><code>GET /user/</code> - Get all users, or an user with a specific name or EID. </summary>
+  
+  Note* Expired users are not returned by default.
 
 * *****Optional query args*****
   * `username` - Username of the user to get. Note: if `eid` is set, this is ignored.
