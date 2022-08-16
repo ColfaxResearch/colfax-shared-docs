@@ -110,9 +110,12 @@ The exact path depends on the project. Contact admin to get the correct base API
 Note: Expired users are not returned by default.
 
 * *****Optional query args*****
-  * `username` - Username of the user to get. Note: if `eid` is set, this is ignored.
-  
+
   * `eid` - EID of the user to get. Note: multiple linux accounts will be returned if the user has multiple.
+
+  * `username` - Username of the user to get. Note: if `eid` is set, this is ignored.  
+
+  * `linux_id` - Linux (POSIX) UID the user to get. Note: if `eid` or `username` is set, this is ignored.  
 
   * `include_expired` - Whether to return expired accounts. By default set to False.
     
