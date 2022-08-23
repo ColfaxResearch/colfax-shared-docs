@@ -436,7 +436,24 @@ The exact path depends on the project. Contact admin to get the correct base API
 }
 ```
 </details>
-  
+
+<details>
+ <summary><code>DELETE /groups/:groupname</code> - Delete a group</summary>
+
+* *****URL Params*****
+
+  * `groupname` - Name of the group to get the users of.
+
+* *****Success Response:*****
+```
+200 OK
+{ 
+  "status" : "success", 
+  "data" : null
+}
+```
+</details>
+
 <details>
  <summary><code>GET /groups/:groupname</code> - Get all users of a group</summary>
 
