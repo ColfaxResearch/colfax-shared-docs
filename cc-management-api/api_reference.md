@@ -123,12 +123,13 @@ Note: Expired users are not returned by default.
   
   * `offset` - Offset used in conjunction with limit.
 
+  * `full` - Get optional metadata information on the user from the database, as opposed to just the minimum. Defaults to false.
 
 
 * *****Success Response:*****
 
-Note: `pagination` is only present if `limit` is set
-
+Note: `pagination` is only present if `limit` is set. `info` is only available if `full=True`
+  
 ```
 200 OK
 { 
@@ -142,6 +143,12 @@ Note: `pagination` is only present if `limit` is set
         "RID": 1,
         "StartDate": 1639704528,
         "eid": "0123456789abcdef",
+        "info": {
+          "company": "mycompany",
+          "email": "myemail@email.com",
+          "fname": "Jane",
+          "lname": "Doe"
+        },
         "username": "u1"
       },
       {
@@ -151,6 +158,12 @@ Note: `pagination` is only present if `limit` is set
         "RID": 2,
         "StartDate": 1641852105,
         "eid": "0123456789abcdef",
+        "info": {
+          "company": "anothercompany",
+          "email": "anotheremail@email.com",
+          "fname": "John",
+          "lname": "Smith"
+        },
         "username": "u2"
       }
     ],
@@ -207,7 +220,30 @@ Note: `pagination` is only present if `limit` is set
 ```
 </details>
 
+<details>
 
+<summary><code>DELETE /user/</code> - Delete user(s) by search terms such as EID. </summary>
+
+* *****Optional args*****
+
+  * `eid` - EID of the user to delete. Note: multiple linux accounts will be deleted if the user has multiple.
+
+  * `username` - Username of the user to delete. Note: if `eid` is set, this is ignored.  
+
+  * `linux_id` - Linux (POSIX) UID the user to delete. Note: if `eid` or `username` is set, this is ignored.  
+
+
+* *****Success Response:*****
+
+```
+200 OK
+{ 
+  "status" : "success", 
+  "data": null
+}
+```
+</details>
+  
 <details>
  <summary><code>GET /user/:user_rid</code> - Get a specific user.</summary>
 
@@ -547,6 +583,29 @@ The exact path depends on the project. Contact admin to get the correct base API
 </details>
 
 
+<details>
+ <summary><code>POST /account/</code> - Create an account, but not a LinuxUser</summary>
+
+* *****Form Params*****
+
+  * **required parameters**
+
+    * `eid` - External ID. This must be an unique identifier.
+
+  * **additional parameters**
+    
+    <b>ALL</b> additional parameters will be stored for record keeping, but will not have any effect. 
+  
+
+* *****Success Response:*****
+```
+200 OK
+{ 
+  "status" : "success", 
+  "data": null
+}
+```
+</details>
 
 <details>
  <summary><code>GET /account/:account_rid</code> - Get a specific account.</summary>
