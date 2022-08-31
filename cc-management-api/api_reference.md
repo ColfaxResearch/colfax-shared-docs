@@ -602,7 +602,7 @@ The exact path depends on the project. Contact admin to get the correct base API
 200 OK
 { 
   "status" : "success", 
-  "data": null
+  "data": {"rid":1}
 }
 ```
 </details>
