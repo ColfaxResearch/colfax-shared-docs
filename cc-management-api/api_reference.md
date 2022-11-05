@@ -295,6 +295,9 @@ Note: `info` is only available if `full=True`
   * **optional parameters**
 
     * `extension` - Number of days to extend the user's access. Ignored if the user does not have an expiration date.
+  
+    * `end_date` - Unixtime for the end_date of the user's access. If set to None or "" it will extend indefinitely.
+
 
 * *****Success Response:*****
 ```
