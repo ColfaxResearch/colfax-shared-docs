@@ -546,6 +546,24 @@ The exact path depends on the project. Contact admin to get the correct base API
 ```
 </details>
 
+<details>
+ <summary><code>POST /account/</code> - Create a new account</summary>
+
+* *****Required Form Params*****
+
+  * `eid` - EID of the account.
+
+* *****Success Response:*****
+```
+200 OK
+{ 
+  "status" : "success", 
+  "data": {
+    "rid": 1
+  }
+}
+```
+</details>
 
 
 <details>
