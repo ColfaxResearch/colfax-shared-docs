@@ -553,6 +553,10 @@ The exact path depends on the project. Contact admin to get the correct base API
 
   * `eid` - EID of the account.
 
+
+* *****Optional Parameters*****
+
+  * All parameters (excluding <code>eid</code>) are used to update or add information. 
 * *****Success Response:*****
 ```
 200 OK
